@@ -4,6 +4,10 @@
 
 using namespace clip;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // clip::lock
 
 CLIP_API lock *lock_create() { return new lock(); }
@@ -74,3 +78,7 @@ CLIP_API bool get_image_spec(image_spec *spec) { return clip::get_image_spec(*sp
 
 CLIP_API void set_x11_wait_timeout(int msecs) { clip::set_x11_wait_timeout(msecs); }
 CLIP_API int get_x11_wait_timeout() { return clip::get_x11_wait_timeout(); }
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
